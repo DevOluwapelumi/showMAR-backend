@@ -15,6 +15,9 @@ app.use(express.json())
 app.use('/api/auth', require('./routes/authRoutes'))
 app.use('/api/users', require('./routes/userRoutes'))
 app.use('/api/reviews', require('./routes/reviewRoutes'))
+app.use(express.urlencoded({ extended: true }))
+app.use('/uploads', express.static('uploads'))
+
 
 
 // DB connect
