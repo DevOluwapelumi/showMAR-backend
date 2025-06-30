@@ -9,9 +9,10 @@ const app = express()
 
 // ✅ CORS First
 app.use(cors({
-  origin: 'https://showmar.vercel.app',
+  origin: ['http://localhost:5173', 'https://showmar.vercel.app'],
   credentials: true,
 }))
+
 
 // ✅ Parse JSON + Form Data
 app.use(express.json())
@@ -24,6 +25,7 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')))
 app.use('/api/auth', require('./routes/authRoutes'))
 app.use('/api/users', require('./routes/userRoutes'))
 app.use('/api/reviews', require('./routes/reviewRoutes'))
+app.use('/api/movies', require('./routes/movieRoutes')) 
 
 // ✅ Connect DB and Start Server
 mongoose.connect(process.env.MONGO_URI)
