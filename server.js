@@ -10,7 +10,7 @@ const app = express()
 
 const allowedOrigins = [
   'http://localhost:3000',
-  'https://showmar-devoluwapelumis-projects.vercel.app'
+  'https://showmar.vercel.app/'
 ];
 
 app.use(cors({
